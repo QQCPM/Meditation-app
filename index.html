@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion-Responsive Water Droplet Simulator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="loader"></div>
+        <div>Loading emotion-responsive droplet...</div>
+    </div>
+    
+    <div id="instructions">Breathe with the droplet</div>
+    <div id="canvas-container"></div>
+    
+    <div id="video-container">
+        <video id="face-video" playsinline></video>
+    </div>
+    
+    <div id="emotion-display">
+        <div id="emotion-indicator"></div>
+        <span id="emotion-text">Detecting...</span>
+    </div>
+    
+    <div id="emotion-history"></div>
+    
+    <div id="ui-container">
+        <div class="controls-row">
+            <div class="control-group">
+                <h2>Attention Level</h2>
+                <button id="attention-high" class="active">Focused</button>
+                <button id="attention-low">Unfocused</button>
+                <button id="attention-dynamic">Dynamic</button>
+            </div>
+            
+            <div class="control-group">
+                <h2>Breathing Pattern</h2>
+                <button id="breathing-normal" class="active">Normal (4-4)</button>
+                <button id="breathing-box">Box (4-4-4-4)</button>
+                <button id="breathing-478">4-7-8</button>
+            </div>
+        </div>
+        
+        <div class="controls-row">
+            <div class="control-group">
+                <h2>Water Effects</h2>
+                <div class="slider-container">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="intensity-slider">
+                    <div class="slider-value" id="intensity-value">50%</div>
+                </div>
+            </div>
+            
+            <div class="control-group">
+                <h2>Audio</h2>
+                <button id="toggle-audio">Enable Audio</button>
+                <div class="slider-container">
+                    <input type="range" min="0" max="100" value="50" class="slider" id="volume-slider" disabled>
+                    <div class="slider-value" id="volume-value">50%</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="controls-row">
+            <div class="control-group">
+                <h2>Emotion Detection</h2>
+                <button id="toggle-emotion">Enable Emotion Detection</button>
+                <button id="toggle-emotion-response" disabled>Enable Emotion Response</button>
+                <button id="toggle-emotion-history">Show Emotion History</button>
+            </div>
+            
+            <div class="control-group">
+                <h2>Session</h2>
+                <button id="toggle-session">Start Session</button>
+                <button id="toggle-video-display">Hide Camera</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="toggle-ui">≡</div>
+
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/main.js" type="module"></script>
+</body>
+</html>
